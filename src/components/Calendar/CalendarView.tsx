@@ -76,8 +76,8 @@ export default function CalendarView() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Calendar View</h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Calendar View</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
             Track your daily progress
           </p>
         </div>
@@ -110,11 +110,11 @@ export default function CalendarView() {
         </div>
 
         {/* Calendar Grid */}
-        <div className="p-6">
+        <div className="p-3 sm:p-6">
           {/* Day names */}
           <div className="grid grid-cols-7 gap-1 mb-2">
             {dayNames.map((day) => (
-              <div key={day} className="p-2 text-center text-sm font-medium text-gray-500 dark:text-gray-400">
+              <div key={day} className="p-1 sm:p-2 text-center text-[10px] sm:text-sm font-medium text-gray-500 dark:text-gray-400">
                 {day}
               </div>
             ))}
@@ -134,17 +134,17 @@ export default function CalendarView() {
               return (
                 <div
                   key={day}
-                  className={`p-2 h-16 border rounded-lg cursor-pointer transition-all duration-200 ${
+                  className={`p-1 sm:p-2 h-10 sm:h-16 border rounded-md sm:rounded-lg cursor-pointer transition-all duration-200 ${
                     isToday 
                       ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
                       : 'border-gray-200 dark:border-gray-700'
                   } ${getStatusColor(status)}`}
                   title={`${tasks.length} tasks on ${monthNames[month]} ${day}`}
                 >
-                  <div className="font-medium text-sm mb-1">{day}</div>
+                  <div className="font-medium text-[10px] sm:text-sm mb-0.5 sm:mb-1">{day}</div>
                   {tasks.length > 0 && (
-                    <div className="text-xs">
-                      <div className={`w-2 h-2 rounded-full inline-block mr-1 ${
+                    <div className="text-[8px] sm:text-xs hidden sm:block">
+                      <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full inline-block mr-0.5 sm:mr-1 ${
                         status === 'complete' ? 'bg-white' :
                         status === 'partial' ? 'bg-white' :
                         status === 'incomplete' ? 'bg-white' : 'bg-gray-400'
@@ -159,22 +159,22 @@ export default function CalendarView() {
         </div>
 
         {/* Legend */}
-        <div className="p-6 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex items-center justify-center space-x-6 text-sm">
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-green-500 rounded"></div>
+        <div className="p-3 sm:p-6 border-t border-gray-200 dark:border-gray-700">
+          <div className="grid grid-cols-2 sm:flex sm:items-center sm:justify-center gap-2 sm:gap-6 text-xs sm:text-sm">
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded flex-shrink-0"></div>
               <span className="text-gray-600 dark:text-gray-400">All Complete</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-yellow-500 rounded"></div>
-              <span className="text-gray-600 dark:text-gray-400">Partially Complete</span>
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded flex-shrink-0"></div>
+              <span className="text-gray-600 dark:text-gray-400">Partial</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-red-500 rounded"></div>
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-red-500 rounded flex-shrink-0"></div>
               <span className="text-gray-600 dark:text-gray-400">Incomplete</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 bg-gray-300 rounded"></div>
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-gray-300 rounded flex-shrink-0"></div>
               <span className="text-gray-600 dark:text-gray-400">No Tasks</span>
             </div>
           </div>

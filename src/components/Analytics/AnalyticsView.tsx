@@ -48,16 +48,16 @@ export default function AnalyticsView() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Analytics</h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Analytics</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
             Insights into your DSA journey
           </p>
         </div>
         <button
           onClick={handleExport}
-          className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+          className="flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors w-full sm:w-auto"
         >
           <Download className="w-4 h-4" />
           <span>Export Data</span>
@@ -65,7 +65,7 @@ export default function AnalyticsView() {
       </div>
 
       {/* Overview Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
         <div className="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
           <div className="flex items-center space-x-3">
             <div className="bg-blue-500 p-3 rounded-lg">
@@ -169,7 +169,7 @@ export default function AnalyticsView() {
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
           Weekly Progress (Last 4 Weeks)
         </h3>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
           {last4Weeks.map((week, index) => (
             <div key={index} className="text-center">
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">

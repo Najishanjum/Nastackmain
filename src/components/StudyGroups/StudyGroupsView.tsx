@@ -12,24 +12,24 @@ export default function StudyGroupsView() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Study Groups</h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Study Groups</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
             Learn together with friends and track progress
           </p>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <button
             onClick={() => setShowJoinModal(true)}
-            className="flex items-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm"
           >
             <UserPlus className="w-4 h-4" />
             <span>Join Group</span>
           </button>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+            className="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm"
           >
             <Plus className="w-4 h-4" />
             <span>Create Group</span>
@@ -38,7 +38,7 @@ export default function StudyGroupsView() {
       </div>
 
       {/* WhatsApp Community Section */}
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6 border border-green-200 dark:border-green-800">
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-4 sm:p-6 border border-green-200 dark:border-green-800">
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <MessageCircle className="w-6 h-6 text-green-600" />
@@ -71,8 +71,8 @@ export default function StudyGroupsView() {
               <span className="font-medium">WhatsApp Channel</span>
             </a>
           </div>
-          <div className="mt-4 text-sm text-green-600 dark:text-green-400">
-            <p>💡 Get daily tips • 🤝 Find study partners • 🏆 Join challenges • 📚 Share resources</p>
+          <div className="mt-3 sm:mt-4 text-xs sm:text-sm text-green-600 dark:text-green-400">
+            <p>💡 Daily tips • 🤝 Study partners • 🏆 Challenges • 📚 Resources</p>
           </div>
         </div>
       </div>

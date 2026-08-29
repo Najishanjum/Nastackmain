@@ -51,8 +51,8 @@ function AppContent() {
         setIsCollapsed={setIsCollapsed}
       />
       
-      <main className="flex-1 overflow-auto">
-        <div className="p-8">
+      <main className="flex-1 overflow-auto pt-14 pb-16 md:pt-0 md:pb-0">
+        <div className="p-4 md:p-8">
           {renderView()}
         </div>
       </main>

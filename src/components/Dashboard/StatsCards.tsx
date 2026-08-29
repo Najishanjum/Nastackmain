@@ -44,23 +44,23 @@ export default function StatsCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
       {stats.map((stat, index) => {
         const Icon = stat.icon;
         return (
-          <div key={index} className={`${stat.bgColor} p-6 rounded-xl border border-gray-200 dark:border-gray-700`}>
+          <div key={index} className={`${stat.bgColor} p-4 sm:p-6 rounded-xl border border-gray-200 dark:border-gray-700`}>
             <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+              <div className="min-w-0">
+                <p className="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 truncate">
                   {stat.label}
                 </p>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">
+                <p className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-1">
                   {stat.value}
-                  {stat.total && <span className="text-sm text-gray-500">/{stat.total}</span>}
+                  {stat.total && <span className="text-xs sm:text-sm text-gray-500">/{stat.total}</span>}
                 </p>
               </div>
-              <div className={`${stat.color} p-3 rounded-lg`}>
-                <Icon className="w-6 h-6 text-white" />
+              <div className={`${stat.color} p-2 sm:p-3 rounded-lg flex-shrink-0`}>
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
               </div>
             </div>
           </div>

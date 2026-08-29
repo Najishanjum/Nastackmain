@@ -54,15 +54,15 @@ export default function TaskItem({ task }: TaskItemProps) {
           </button>
           
           <div className="flex-1 min-w-0">
-            <div className="flex items-center space-x-2 mb-1">
-              <h3 className={`font-medium ${
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 mb-1">
+              <h3 className={`font-medium text-sm sm:text-base ${
                 task.completed 
                   ? 'text-green-800 dark:text-green-300 line-through' 
                   : 'text-gray-900 dark:text-white'
               }`}>
                 {task.title}
               </h3>
-              <span className={`px-2 py-1 text-xs font-medium rounded border ${DIFFICULTY_COLORS[task.difficulty]}`}>
+              <span className={`px-2 py-0.5 text-[10px] sm:text-xs font-medium rounded border ${DIFFICULTY_COLORS[task.difficulty]}`}>
                 {task.difficulty}
               </span>
             </div>
@@ -100,7 +100,7 @@ export default function TaskItem({ task }: TaskItemProps) {
               </div>
             )}
             
-            <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">
               <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 px-2 py-1 rounded">
                 {task.category}
               </span>
@@ -116,7 +116,7 @@ export default function TaskItem({ task }: TaskItemProps) {
             </div>
           </div>
           
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-0.5 sm:space-x-1 flex-shrink-0">
             <button
               onClick={() => setShowResourcesModal(true)}
               className="p-1 hover:bg-purple-100 dark:hover:bg-purple-900/30 rounded transition-colors"

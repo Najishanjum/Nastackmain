@@ -68,37 +68,37 @@ export default function FlashcardsView() {
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Flashcards</h1>
-          <p className="text-gray-600 dark:text-gray-400 mt-1">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Flashcards</h1>
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
             {reviewMode ? `${flashcardsForReview.length} cards due for review` : `${allFlashcards.length} total cards`}
           </p>
         </div>
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
           <button
             onClick={() => setReviewMode(!reviewMode)}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-lg transition-colors text-sm ${
               reviewMode
                 ? 'bg-orange-600 hover:bg-orange-700 text-white'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
-            <Brain className="w-4 h-4 inline mr-2" />
-            {reviewMode ? 'Exit Review' : 'Review Mode'}
+            <Brain className="w-4 h-4 inline mr-1 sm:mr-2" />
+            {reviewMode ? 'Exit Review' : 'Review'}
           </button>
           <button
             onClick={resetSession}
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+            className="flex-1 sm:flex-initial px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm"
           >
-            <RotateCcw className="w-4 h-4 inline mr-2" />
+            <RotateCcw className="w-4 h-4 inline mr-1 sm:mr-2" />
             Reset
           </button>
         </div>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         <div className="bg-white dark:bg-gray-900 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4">
           <div className="text-center">
             <p className="text-2xl font-bold text-blue-600">{allFlashcards.length}</p>
@@ -189,7 +189,7 @@ export default function FlashcardsView() {
 
             {/* Card Stats */}
             <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
+              <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-8 gap-y-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                 <span>Reviews: {currentCard.reviewCount}</span>
                 <span>Correct: {currentCard.correctCount}</span>
                 <span>

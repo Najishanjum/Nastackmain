@@ -26,8 +26,8 @@ export default function SettingsView() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Settings</h1>
-        <p className="text-gray-600 dark:text-gray-400 mt-1">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">Settings</h1>
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mt-1">
           Customize your DSA tracker experience
         </p>
       </div>
